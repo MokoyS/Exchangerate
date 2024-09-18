@@ -10,11 +10,11 @@ async function createSelectOptions() {
     const dataTaux = await fetchApi();
     console.log(dataTaux);
     const select1 = document.getElementById("selector1");
+    const input = document.getElementById("amount");
     const select2 = document.getElementById("selector2");
-    const rates = dataTaux.conversion_rates; // Accéder aux taux de conversion
+    const rates = dataTaux.conversion_rates;
     console.log(rates);
 
-    // Utilisez Object.entries() pour itérer sur un objet
     Object.entries(rates).forEach(([currency, rate1]) => {
         const option1 = document.createElement("option");
         option1.value = rate1;
@@ -27,20 +27,28 @@ async function createSelectOptions() {
         option2.text = `${currency}`;
         select2.appendChild(option2);
     });
+    select1.addEventListener("change", convertCurrency);
+    select2.addEventListener("change", convertCurrency);
+    input.addEventListener("input", convertCurrency);
 }
 
 function convertCurrency() {
     const amount = document.getElementById("amount").value;
-    const selector1 = document.getElementById("selector1").value;
-    const selector2 = document.getElementById("selector2").value;
+    const selector1 = document.getElementById("selector1");
+    const selector2 = document.getElementById("selector2");
+    const result1 = document.getElementById("result");
+    const rate1 = selector1.value;
+    const rate2 = selector2.value;
+    const resultValue = (amount * rate2) / rate1;
+    result1.value = resultValue;
+    console.log(resultValue);
     const result = document.getElementById("result");
-
-    const convertedAmount = (amount * selector2) / selector1;
-    result.innerHTML = `${amount} ${selector1} = ${convertedAmount.toFixed(
-        2
-    )} ${selector2}`;
+    if (amount === "") {
+        result.innerHTML = "0";
+    } else {
+        result.innerHTML = resultValue;
+    }
 }
-console.log(selector1.value);
 
 createSelectOptions();
 convertCurrency();
