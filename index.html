@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Convertisseur de devises</title>
     </head>
-    <body></body>
+    <body>
+        <div class="container">
+            <h1>Convertisseur de devises</h1>
+            <div class="conversion-form">
+                <label for="fromCurrency">De :</label>
+                <select id="selector1"></select>
+
+                <label for="toCurrency">À :</label>
+                <select id="selector2"></select>
+
+                <label for="amount">Montant :</label>
+                <input
+                    type="number"
+                    value=""
+                    id="amount"
+                    placeholder="Entrez un montant"
+                />
+
+                <h2 id="result">Résultat : 0</h2>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
 </html>
