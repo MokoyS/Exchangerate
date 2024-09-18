@@ -46,7 +46,7 @@ function convertCurrency() {
     if (amount === "") {
         result.innerHTML = "0";
     } else {
-        result.innerHTML = resultValue.toFixed(2);
+        result.innerHTML = resultValue.toFixed(4);
     }
 }
 
