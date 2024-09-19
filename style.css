@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-*{
-    padding:0;
+* {
+    padding: 0;
     margin: 0;
     box-sizing: 0;
     font-family: "Montserrat", sans-serif;
-    
 }
 
 body {
@@ -32,10 +31,10 @@ form {
     justify-content: center;
     background-color: white;
     border-radius: 15px;
-    box-shadow: rgba(255, 255, 255, 0.416) 0px 10px 36px 0px, rgba(255, 255, 255, 0.416) 0px 0px 0px 1px;
+    box-shadow: rgba(255, 255, 255, 0.416) 0px 10px 36px 0px,
+        rgba(255, 255, 255, 0.416) 0px 0px 0px 1px;
     flex-direction: column;
     padding: 60px;
-
 }
 
 .input {
@@ -50,7 +49,6 @@ input {
     border: 1px solid rgba(0, 0, 0, 0.37);
     margin-top: 10px;
     outline: none;
-    
 }
 
 select {
@@ -68,8 +66,8 @@ select {
     flex-direction: row;
 }
 
-h2:nth-child(1){
-    padding-top:50px ;
+h2:nth-child(1) {
+    padding-top: 50px;
 }
 
 h2 {
@@ -87,3 +85,6 @@ svg {
     height: 60px;
 }
 
+#amount {
+    padding: 0 10px 0 10px;
+}
